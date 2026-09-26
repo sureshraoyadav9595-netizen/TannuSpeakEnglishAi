@@ -1,0 +1,15 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg">
+<LinearLayout android:orientation="vertical" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+<TextView android:text="Tannu Speak English AI" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/text" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:text="Learn English. Speak confidently. 🚀" android:textSize="16sp" android:textColor="@color/muted" android:layout_marginTop="6dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+<TextView android:id="@+id/statusText" android:text="Tap Speak with AI and start talking 🎤" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/text" android:gravity="center" android:layout_marginTop="24dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/heardText" android:text="Your spoken English will appear here." android:textSize="16sp" android:textColor="@color/muted" android:gravity="center" android:padding="16dp" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+<Button android:id="@+id/speakBtn" android:text="🗣  Speak with AI" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="56dp"/>
+<Button android:id="@+id/lessonBtn" android:text="📚  Daily Lesson" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="56dp"/>
+<Button android:id="@+id/vocabBtn" android:text="🔤  Vocabulary" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="56dp"/>
+<Button android:id="@+id/pronBtn" android:text="🎤  Pronunciation Practice" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="56dp"/>
+<Button android:id="@+id/progressBtn" android:text="📈  My Progress" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="56dp"/>
+<TextView android:text="Day 1 • 5 minutes practice" android:textSize="14sp" android:textColor="@color/muted" android:gravity="center" android:layout_marginTop="28dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout></ScrollView>

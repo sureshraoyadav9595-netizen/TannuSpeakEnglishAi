@@ -17,31 +17,34 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Prepare Android SDK
+        run: |
+          yes | sdkmanager --licenses || true
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
       - name: Download Gradle
         run: |
           curl -L -o gradle.zip https://services.gradle.org/distributions/gradle-8.7-bin.zip
           unzip -q gradle.zip
-          echo "$PWD/gradle-8.7/bin" >> $GITHUB_PATH
+          echo "$PWD/gradle-8.7/bin" >> "$GITHUB_PATH"
 
       - name: Extract Android project
         run: |
           mkdir project
           unzip -q TannuSpeakEnglishAI-v2-build.zip -d project
 
-      - name: Find project
+      - name: Locate project
         run: |
           find project -name settings.gradle -o -name settings.gradle.kts
 
       - name: Build APK
         run: |
-          cd project/TannuSpeakEnglishAI
+          PROJECT_DIR=$(dirname "$(find project -name settings.gradle | head -1)")
+          cd "$PROJECT_DIR"
           gradle assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Tannu-Speak-English-AI-APK
-          path: project/TannuSpeakEnglishAI/app/build/outputs/apk/debug/*.apk
+          path: project/**/app/build/outputs/apk/debug/*.apk
